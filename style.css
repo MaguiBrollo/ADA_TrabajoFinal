@@ -73,7 +73,7 @@ li {
 
 
 .img-menu {
-    display: none;
+    display:none;
 }
 
 /* ---------------------------------- personajes   ---------------- */
@@ -157,14 +157,17 @@ li {
 
 .boton-ver-mas {        /*ojo esta adentro de  .ver-mas-card-personaje */
     border: 0px;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: orangered;
     background-color: cornsilk;
+    text-decoration: none;
 }
 
 .boton-ver-mas:hover {
-    color: blue;
+    color: rgb(145, 58, 26);
+    font-weight: bold;
 }
+
 
 
 /* ---------------------------------- TOTAL personajes   --------- */
