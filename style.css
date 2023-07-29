@@ -8,18 +8,15 @@ body {
     margin: 0px;
     display: block;
 
-    /*  font-size: 1.2rem; */
     line-height: 1.5;
     font-family: 'Roboto Condensed', sans-serif;
-  
 }
 
 /*  ----------------------------------------- menu ---------------------- */
 
 .nav-header {
     display: flex;
-    align-items: center;
-    /* centra vertical*/
+    align-items: center;     /* centra vertical*/
     flex-direction: row;
     justify-content: flex-end;
 
@@ -31,21 +28,18 @@ body {
 .nombre {
     height: 60px;
     width: 300px;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     color: white;
     text-decoration: none;
-    flex-basis: 300px;
-    /*con .menu*/
+    flex-basis: 300px;       /*con .menu*/
     padding: 0px;
     margin: 0px;
 }
 
 .menu {
-    flex-basis: 90%;
-    /* con .nombre*/
+    flex-basis: 90%;     /* con .nombre*/
 
-    display: flex;
-    /* estos 3 para END horizonta el nombre dentro de este contenedor*/
+    display: flex;     /* estos 3 para END horizonta el nombre dentro de este contenedor*/
     flex-direction: row;
     justify-content: flex-end;
 }
@@ -53,8 +47,7 @@ body {
 ul {
     display: inline;
     color: white;
-    list-style-type: none;
-    /*saca viñeta  a la lista*/
+    list-style-type: none;     /*saca viñeta  a la lista*/
 }
 
 li {
@@ -74,7 +67,6 @@ li {
 }
 
 .boton-menu:hover {
-   /*  color: chartreuse; */
     background-color:rgb(248, 244, 244);
     color: black;
 }
@@ -84,27 +76,20 @@ li {
     display: none;
 }
 
-/* ---------------------------------- TOTAL personajes   --------- */
-.mns-totales {
-    font-size: 1.1rem;
-    color: green;
-    margin: 10px 20px;
-}
-
 /* ---------------------------------- personajes   ---------------- */
-
 .contenedor-personajes {
-    width: 95%;
-    display: grid;
-    flex-wrap: wrap;
+  
     margin: 0px auto;
     padding: 5px 20px;
-    gap: 15px;                  /* espacio entre columnas y filas*/
+    gap: 15px; 
+
+    display: grid;
+    flex-wrap: wrap;
+                  
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 700px;
-    justify-content: stretch;
-    /* grid-template-columns: 25% 25% 25% 25%; */
-    /* grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); */
+    justify-content: stretch; 
+
 }
 
 .card-personaje {
@@ -181,6 +166,50 @@ li {
     color: blue;
 }
 
+
+/* ---------------------------------- TOTAL personajes   --------- */
+.mns-totales {
+    font-size: 1.1rem;
+    color: green;
+    margin: 10px 20px;
+}
+
+.mns-totales-pg{
+    font-size: 1.1rem;
+    color: green;
+    margin: 10px 20px;
+    text-align: center;
+}
+
+/* -------------------- botones avance-atras*/
+.btn-paginas{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-img{
+    height:45px ;
+    width: 45px;
+    margin: 5px;
+    border: 2px solid gray;
+}
+
+.btn-img:hover{
+    border: 2px solid burlywood;
+    box-shadow: 5px 5px 2px -1px gray;
+}
+
+
+.derechos{
+    height: 150px;
+    background-color: black;
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+}
 /*-------------------------------------------- MEDIA QUERY -------------------*/
 
 @media(max-width:760px) {
@@ -206,16 +235,14 @@ li {
 
 
 
-
-@media(max-width: 700px) {
-
+@media(1px <= width <= 700px) {
     .contenedor-personajes {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 100%;
     }
 
 }
 
-@media(max-width: 993px) {
+@media(700px < width <= 993px) {
  
     .contenedor-personajes {
         grid-template-columns: repeat(2, 1fr);
