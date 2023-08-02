@@ -3,6 +3,7 @@ var url_string = window.location.href
 var url = new URL(url_string);
 var id_un_personaje = parseInt(url.searchParams.get("id"));
  
+let eepi=[];
 
 //---------------------------- UNO ----------------------------
 const uno_nombre = document.getElementById('nombre-uno');
@@ -15,6 +16,7 @@ respuestaFetch.then((respuesta) => {
     return respuesta.json();
 })
     .then((data) => {
+        eepi=data.episode;
         uno_nombre.innerHTML += `<h2> Personaje seleccionado: ${data.name} </h2>`
         uno_personaje_vermas.innerHTML = `
             <div class="card-personaje-uno">
@@ -29,11 +31,19 @@ respuestaFetch.then((respuesta) => {
                         Género   : ${data.gender}  <br>
                         Especie  : ${data.species} <br>
                         Estatus  : ${data.status} <br>
-                        Origen   : ${data.name} <br>
-                        Ubicación: ${data.location.name} <br><br>
-                        Episodio :  <br>
-                        Creado   : ${data.created} <br><br>
-
+                        Creado   : ${data.created} <br>
+                        <br>
+                        Origen: <br>
+                        -Nombre: ${data.origin.name} <br>
+                        -URL   : <a href="${data.origin.url}"> URL origen</a> <br>
+                        
+                        <br>
+                        Ubicación: <br>
+                        -Nombre: ${data.location.name} <br>
+                        -URL   : <a href="${data.location.url}"> URL Ubicación</a> <br>
+                        <br>
+                        Episodios:  <br>
+                        -URL   : <a href="${data.episode[1]}"> Episodio 1</a> <br>
                         <br><br>
                     </p>
                 </div>
@@ -45,8 +55,32 @@ respuestaFetch.then((respuesta) => {
     });
 
 
+/* //----------------------
+function buscar_episodio(uri){
+    fetch(uri)
+    .then((data) => {
+        console.log(datos);
+        return datos.json();
+    })
+        .then((data) => {
+            console.log(data);
+            return data;
+        })
+}
 
 
+    eepi.forEach(epi => {
+        let ep = buscar_episodio(epi);
+        console.log(ep);
+        uno_personaje_vermas.innerHTML +=`
+        <p>
+            Nombre .......: ${ep.name}<br>
+            Fecha Estreno.: ${ep.air_date}  <br>
+            Espisodio.....: ${ep.episode} <br>
+            url...........: ${ep.url} <br>
+            Fecha Creado..: ${ep.created} <br>
+        </p> `  
+    });    */
     
 //-------------------- el siguiente CODIGO es para cuando pasan mas d eun parametro
 

@@ -1,9 +1,9 @@
 
+//------------------- Conteneder de los personajes (es el lugar donde los muestra)
 const contenedor = document.getElementById('contenedor');
 
-//--------------------------------
+//-------------------------------- Totales -----------------------
 const total_personajes = document.getElementById('total-personajes');
-
 const actual_pag = document.getElementById('pagina-actual');
 const total_pag = document.getElementById('total-paginas');
 
@@ -12,14 +12,14 @@ let dataFetch = [];  //guarda el arrary de lo personajes
 let pagina_ac = 1;
 let total_pg = 0;
 
-//-------------------------------
+//------------------------------- Botones de filtrado
 const boton_todos = document.getElementById('todos');
 const boton_mujeres = document.getElementById('mujeres');
 const boton_hombres = document.getElementById('hombres');
 const boton_sinGenero = document.getElementById('sinGenero');
 const boton_desconocidos = document.getElementById('desconocidos');
 
-//------------------------------------------ boTones de paginación ---
+//------------------------------------------ Botones de paginación ---
 const btn_izq = document.getElementById('btn-img-izq');
 const btn_ant = document.getElementById('btn-img-ant');
 const btn_sig = document.getElementById('btn-img-sig');
@@ -74,7 +74,6 @@ function filtrar_personajes(de_donde) {
     }
 }
 
-
 function todos() {
     filtrar_personajes('todos');
 }
@@ -115,12 +114,31 @@ function buscar_personajes() {
         }).catch((error) => {           //atrapa error
             console.log(error);
         });
+        ocultarMostrarBotones();
+}
+
+//------  ocultar/mostrar botones de paginacion
+function ocultarMostrarBotones(){
+    if(pagina_ac <=1 ){
+        btn_izq.style.visibility='hidden';
+        btn_ant.style.visibility='hidden';
+    }else{
+        btn_izq.style.visibility='visible';
+        btn_ant.style.visibility='visible';
+    }
+
+    if( pagina_ac === (total_pg)){  
+        btn_der.style.visibility='hidden';
+        btn_sig.style.visibility='hidden';
+    }else{
+        btn_der.style.visibility='visible';
+        btn_sig.style.visibility='visible';
+    }
 }
 
 
 //---------------- paginacion --------------------------
 const paginas = async promesa => {
-
     btn_sig.addEventListener('click', () => {
         if (pagina_ac === total_pg) {
             pagina_ac = total_pg;
@@ -130,7 +148,7 @@ const paginas = async promesa => {
         buscar_personajes();
     })
 
-    btn_ant.addEventListener('click', () => {
+    btn_ant.addEventListener('click', () => {   
         if (pagina_ac === 1) {
             pagina_ac = 1;
         } else {

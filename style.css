@@ -27,19 +27,18 @@ body {
 
 .nombre {
     height: 60px;
-    width: 300px;
     font-size: 2.3rem;
     color: white;
     text-decoration: none;
-    flex-basis: 300px;       /*con .menu*/
+    flex-basis: 35%;       /*con .menu*/
     padding: 0px;
     margin: 0px;
 }
 
 .menu {
-    flex-basis: 90%;     /* con .nombre*/
+    flex-basis: 70%;     /* con .nombre*/
 
-    display: flex;     /* estos 3 para END horizonta el nombre dentro de este contenedor*/
+    display: flex;     /* estos 3, para END horizontal el nombre dentro de este contenedor*/
     flex-direction: row;
     justify-content: flex-end;
 }
@@ -111,8 +110,7 @@ li {
     width: 100%;
     
     overflow: hidden;
-   
-    transition: all 300ms;       /* cuando la imagen se agranda al pasar el ratón*/
+
     position: inherit;
 }
 
@@ -122,6 +120,7 @@ li {
 
 .cont-img:hover .img-card-personaje {
     transform:scale(1.5);
+    transition: all 300ms linear; /*la imagen se agranda*/
 }
 .cont-img {overflow:hidden;}
 
@@ -215,40 +214,32 @@ li {
 }
 /*-------------------------------------------- MEDIA QUERY -------------------*/
 
-@media(max-width:760px) {
+@media(max-width:700px) {
     .nombre {
         height: 60px;
-        font-size: 2.0rem;
+        font-size: 1.9 rem;
     }
 
-    ul {
-        display: none;
+    .nav-header{
+        height: 150px;
+    }
+   
+    li{
+        float: none;
+        text-align:right;
     }
 
-    .img-menu {
-        display: inline;
-        border-radius: 5px;
-
-        display: flex;
-        /* estos 3 para END horizonta el nombre dentro de este contenedor*/
-        align-items: flex-end;
-        flex-direction: row;
-    }
 }
-
 
 
 @media(1px <= width <= 700px) {
     .contenedor-personajes {
         grid-template-columns: 100%;
     }
-
 }
 
 @media(700px < width <= 993px) {
- 
     .contenedor-personajes {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
