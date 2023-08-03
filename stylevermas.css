@@ -1,6 +1,5 @@
 
 body {
-    min-width: 343px;
     margin: 0px;
     display: flex;
     flex-direction: column;
@@ -41,7 +40,7 @@ body {
 }
 
 .card-personaje-uno {  /* es la tarejta que tiene cont-img y le info*/
-    width: 465px;
+    width: 450px;
     height: 100%;
     position: relative;
     display: flex;
@@ -89,7 +88,7 @@ body {
 
 .cont-episodios{
     height: 300px;
-	width: 433px;
+	width: 400px;
 	border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-color: rgb(189, 189, 189); 
@@ -98,4 +97,13 @@ body {
 	overflow-y: scroll;
     padding: 0px 0px 0px 30px;
     align-self: center;
+}
+
+@media(max-width:700px) {
+    .card-personaje-uno {  /* es la tarejta que tiene cont-img y le info*/
+        width: 350px;
+    }
+    .cont-episodios{
+        width: 317px;
+    }
 }
