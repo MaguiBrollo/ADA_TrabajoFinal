@@ -216,8 +216,10 @@ li {
 
 @media(max-width:700px) {
     .nombre {
-        height: 60px;
+        height: 150px;
         font-size: 1.9 rem;
+        display: flex;
+        align-items: center;
     }
 
     .nav-header{
@@ -232,13 +234,13 @@ li {
 }
 
 
-@media(1px <= width <= 700px) {
+@media(max-width:700px) {  /*@media(1px <= width <= 700px)*/
     .contenedor-personajes {
         grid-template-columns: 100%;
     }
 }
 
-@media(700px < width <= 993px) {
+@media(min-width:700px) and (max-width:993px) {
     .contenedor-personajes {
         grid-template-columns: repeat(2, 1fr);
     }

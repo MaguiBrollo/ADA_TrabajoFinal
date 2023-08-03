@@ -63,15 +63,14 @@ function buscar_episodios(x){
     }).then((epi_data)=>{
         //console.log(mas_episode)
         uno_cont_episodios.innerHTML +=`
-                <div class="epi">
-                    <p>
-                    <b> Nombre .......: ${epi_data.name} </b><br>
-                        Fecha Estreno.: ${epi_data.air_date} <br>
-                        Espisodio.....: ${epi_data.episode} <br>
-                        url...........: ${epi_data.url} <br>
-                        Fecha Creado..: ${epi_data.created} <br>
-                    </p>
-                </div>` 
+                <p>
+                    <b> Nombre: ${epi_data.name} </b><br>
+                        Fecha Estreno: ${epi_data.air_date} <br>
+                        Espisodio: ${epi_data.episode} <br>
+                        url: ${epi_data.url} <br>
+                        Fecha Creado: ${epi_data.created} <br>
+                </p>
+                ` 
     });    
 }
 
